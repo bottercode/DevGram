@@ -1,22 +1,16 @@
-<<<<<<< HEAD
-import React from 'react';
-import './App.css';
-import Headers from './components/Header';
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Headers />
-       Hello
-      </header>
-    </div>
-  );
-=======
+import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";
+import Register from "./components/Register/Register";
 
 function App() {
-  return <div className="App">Pro - gram 🚀</div>;
->>>>>>> fb8b126c6446db17070c9ebfbf84434edb09fb65
+  return (
+  <div className="App">
+    <BrowserRouter>
+      <Route path="/register" element={<Register />} />
+    </BrowserRouter>
+   
+  </div>
+  );
 }
 
 export default App;

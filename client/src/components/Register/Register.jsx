@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import {ToastContainer, toast} from "react-toastify";
 import "react-toastify/dit/ReactToastify.css"
 import axios from "axios"
+import { registerRoute } from '../../APIRoutes';
+import { useHistory } from "react-router-dom";
+const localstorage_key = process.env.LOCALSTORAGE_KEY
 
 const Register = () => {
-    
+    const history = useHistory();
     const toastOptions = {
         position: "bottom-right",
         autoClose: 8000,
@@ -48,9 +51,21 @@ const Register = () => {
         event.preventDefault();
         if(handleValidation()){
             const { email, password, username }= values;
-            const {data} = await axios.post(register{
-
+            const {data} = await axios.post(registerRoute, {
+                username, 
+                email, 
+                password
             })
+            if(data.status == false){
+                toast.error(data.msg, toastOptions)
+            }
+            if(data.status == true){
+                localStorage.setItem(
+                    localstorage_key,
+                    JSON.stringify(data.user)
+                )
+                history.push("/")
+            }
         }
     }
     const handleChange = (event) => {

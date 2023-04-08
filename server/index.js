@@ -2,6 +2,7 @@ const express = require("express");
 const { default: mongoose } = require("mongoose");
 const mogoose = require("mongoose")
 const app = express();
+const authRoute = require("./routes/auth")
 const dotenv = require("dotenv").config()
 const PORT = process.env.PORT
 
