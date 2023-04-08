@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+
 import "./App.css";
 import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
@@ -8,7 +9,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route path="/" exact>
+          <Route path="/login" exact>
             <Login />
           </Route>
           <Route path="/Register" exact>
