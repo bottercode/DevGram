@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react'
 import {ToastContainer, toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 import axios from "axios"
-import { registerRoute } from '../../APIRoutes';
+import { loginRoute } from '../../APIRoutes';
 import { useHistory, Link } from "react-router-dom";
 
 const localstorage_key = process.env.LOCALSTORAGE_KEY
@@ -48,7 +48,7 @@ const Login = () => {
         event.preventDefault();
         if(handleValidation()){
             const { password, username } = values;
-            const {data} = await axios.post(registerRoute, {
+            const {data} = await axios.post(loginRoute, {
                 username, 
                 password
             })
