@@ -4,6 +4,7 @@ import "./App.css";
 import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import  Navbar from "./components/Nav/navbar";
+import Home from "./components/home/Home";
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,7 @@ function App() {
           </Route>
           <Route path='/' exact>
             <Navbar/>
+            <Home />
           </Route>  
         </Switch>
       </BrowserRouter>

@@ -38,7 +38,7 @@ const Register = () => {
         const { password, confirmPassword, username, email} = values;
         if(password !== confirmPassword){
             toast.error(
-                "Password and Confirm password should be same,",
+                "Password and Confirm password should be same.",
                 toastOptions
             )
             return false;

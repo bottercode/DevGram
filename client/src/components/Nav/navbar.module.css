@@ -1,7 +1,13 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 .header{
   background-color: #ebde34;
   height: 45px;
 }
+
 a{
   font-size: larger;
 }

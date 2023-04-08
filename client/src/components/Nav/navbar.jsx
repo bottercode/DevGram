@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './navbar.module.css';
+
 function Navbar() {
   return (
     <header className={classes.header}>
