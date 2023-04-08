@@ -1,0 +1,39 @@
+.header{
+  background-color: #ebde34;
+  height: 45px;
+}
+a{
+  font-size: larger;
+}
+.logo{
+  text-decoration: none;
+    padding-left: 15px;
+    font-size: 13px;
+    float: left;
+}
+.nav{
+    float: right;
+}
+.elements{
+  color: black; 
+  list-style-type: none;
+  text-decoration: none;
+  font: 'Nunito Sans', 'sans-serif';
+  font-weight: 400;
+  font-size: 20px;
+  padding-right:10px ;
+  padding-left: 10px;
+ 
+}
+.logotext{
+  padding-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
