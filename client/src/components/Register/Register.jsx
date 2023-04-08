@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import {ToastContainer, toast} from "react-toastify";
-import "react-toastify/dit/ReactToastify.css"
+import "react-toastify/dist/ReactToastify.css"
 import axios from "axios"
 import { registerRoute } from '../../APIRoutes';
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
+
 const localstorage_key = process.env.LOCALSTORAGE_KEY
 
 const Register = () => {
+   
     const history = useHistory();
     const toastOptions = {
         position: "bottom-right",
@@ -23,6 +25,15 @@ const Register = () => {
         confirmPassword: "",
     })
 
+    useEffect(() => {
+        const checkIfUserLoggedIn = () => {
+            if (localStorage.getItem(localstorage_key)) {
+              history.push("/");
+            }
+          }
+          checkIfUserLoggedIn();
+      }, []);
+
     const handleValidation = () => {
         const { password, confirmPassword, username, email} = values;
         if(password !== confirmPassword){
@@ -34,32 +45,39 @@ const Register = () => {
         }
         else if(username.length < 3){
             toast.error(
-                "Username should be greater than atleast 3 letters"
+                "Username should be greater than atleast 3 letters",
+                toastOptions
             )
             return false
         }
         else if(password.length<8){
             toast.error(
-                "Password should be greater than atleast 8 letters"
+                "Password should be greater than atleast 8 letters",
+                toastOptions
             )
             return false
         }
+        else if (email === "") {
+            toast.error("Email is required.", toastOptions);
+            return false;
+          }
+      
         return true
     }
     
     const handleSubmit = async(event) => {
         event.preventDefault();
         if(handleValidation()){
-            const { email, password, username }= values;
+            const { email, password, username } = values;
             const {data} = await axios.post(registerRoute, {
                 username, 
                 email, 
                 password
             })
-            if(data.status == false){
+            if(data.status === false){
                 toast.error(data.msg, toastOptions)
             }
-            if(data.status == true){
+            if(data.status === true){
                 localStorage.setItem(
                     localstorage_key,
                     JSON.stringify(data.user)
@@ -74,6 +92,7 @@ const Register = () => {
 
   return (
     <div className='register'>
+         <h1>sdsd</h1>
         <form action ="" onSubmit={(event) => handleSubmit(event)}>
             <div className='title-name'>
                 <h1>Pro-Gram</h1>
@@ -104,7 +123,7 @@ const Register = () => {
             />
             <button type='submit'> Create User</button>
             <span>
-                Already having an account? 
+                Already having an account? <Link to="/login">Login </Link>
             </span>
         </form>
         <ToastContainer />
