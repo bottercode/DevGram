@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {ToastContainer, toast} from "react-toastify";
 import "react-toastify/dit/ReactToastify.css"
+import axios from "axios"
 
 const Register = () => {
     
@@ -19,7 +20,7 @@ const Register = () => {
         confirmPassword: "",
     })
 
-    const handleVaildation = () => {
+    const handleValidation = () => {
         const { password, confirmPassword, username, email} = values;
         if(password !== confirmPassword){
             toast.error(
@@ -45,8 +46,11 @@ const Register = () => {
     
     const handleSubmit = async(event) => {
         event.preventDefault();
-        if(handleVaildation()){
+        if(handleValidation()){
+            const { email, password, username }= values;
+            const {data} = await axios.post(register{
 
+            })
         }
     }
     const handleChange = (event) => {

@@ -14,6 +14,8 @@ mongoose.connect(process.env.MONGO_URL, {
     console.log("Error while connecting", err.message);
 })
 
+app.use("/api/auth", authRoute)
+
 app.listen(PORT, () => {
     console.log(`Server started listening on port ${PORT}`)
 })
