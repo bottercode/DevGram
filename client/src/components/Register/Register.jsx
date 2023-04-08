@@ -92,7 +92,6 @@ const Register = () => {
 
   return (
     <div className='register'>
-         <h1>sdsd</h1>
         <form action ="" onSubmit={(event) => handleSubmit(event)}>
             <div className='title-name'>
                 <h1>Pro-Gram</h1>
