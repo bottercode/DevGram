@@ -37,95 +37,7 @@ const Register = () => {
     const { password, confirmPassword, username, email } = values;
     if (password !== confirmPassword) {
       toast.error(
-        "Password and Confirm password should be same,",
-        toastOptions
-      );
-      return false;
-    } else if (username.length < 3) {
-      toast.error(
-        "Username should be greater than atleast 3 letters",
-        toastOptions
-      );
-      return false;
-    } else if (password.length < 8) {
-      toast.error(
-        "Password should be greater than atleast 8 letters",
-        toastOptions
-      );
-      return false;
-    } else if (email === "") {
-      toast.error("Email is required.", toastOptions);
-      return false;
-    }
-
-    return true;
-  };
-
-    useEffect(() => {
-        const checkIfUserLoggedIn = () => {
-            if (localStorage.getItem(localstorage_key)) {
-              history.push("/");
-            }
-          }
-          checkIfUserLoggedIn();
-      }, []);
-
-    const handleValidation = () => {
-        const { password, confirmPassword, username, email} = values;
-        if(password !== confirmPassword){
-            toast.error(
-                "Password and Confirm password should be same.",
-                toastOptions
-            )
-            return false;
-        }
-        else if(username.length < 3){
-            toast.error(
-                "Username should be greater than atleast 3 letters",
-                toastOptions
-            )
-            return false
-        }
-        else if(password.length<8){
-            toast.error(
-                "Password should be greater than atleast 8 letters",
-                toastOptions
-            )
-            return false
-        }
-        else if (email === "") {
-            toast.error("Email is required.", toastOptions);
-            return false;
-          }
-      
-        return true
-    }
-    
-    const handleSubmit = async(event) => {
-        event.preventDefault();
-        if(handleValidation()){
-            const { email, password, username } = values;
-            const {data} = await axios.post(registerRoute, {
-                username, 
-                email, 
-                password
-            })
-            if(data.status === false){
-                toast.error(data.msg, toastOptions)
-            }
-            if(data.status === true){
-                localStorage.setItem(
-                    localstorage_key,
-                    JSON.stringify(data.user)
-                )
-                history.push("/")
-            }
-        }
-  const handleValidation = () => {
-    const { password, confirmPassword, username, email } = values;
-    if (password !== confirmPassword) {
-      toast.error(
-        "Password and Confirm password should be same,",
+        "Password and Confirm password should be same.",
         toastOptions
       );
       return false;
@@ -166,17 +78,15 @@ const Register = () => {
         history.push("/");
       }
     }
-    const handleChange = (event) => {
-        setValues({ ...values, [event.target.name]: event.target.value});
-    }
   };
+
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 
   return (
     <div>
-      <form action="" onSubmit={(event) => handleSubmit(event)}>
+      <form onSubmit={handleSubmit}>
         <div>
           <h1>Pro-Gram</h1>
         </div>
@@ -184,30 +94,30 @@ const Register = () => {
           type="text"
           placeholder="username"
           name="username"
-          onChange={(e) => handleChange(e)}
+          onChange={handleChange}
         />
         <input
           className="mt-9"
           type="email"
           placeholder="Email"
           name="email"
-          onChange={(e) => handleChange(e)}
+          onChange={handleChange}
         />
         <input
           type="password"
           placeholder="Password"
           name="password"
-          onChange={(e) => handleChange(e)}
+          onChange={handleChange}
         />
         <input
           type="password"
           placeholder="Confirm Password"
           name="confirmPassword"
-          onChange={(e) => handleChange(e)}
+          onChange={handleChange}
         />
         <button type="submit"> Create User</button>
         <span>
-          Already having an account? <Link to="/login">Login </Link>
+          Already have an account? <Link to="/login">Login</Link>
         </span>
       </form>
       <ToastContainer />
