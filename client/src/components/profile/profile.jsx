@@ -28,7 +28,6 @@ const Profile = ({ name, email, bio, avatarUrl }) => {
         <h2>{name}</h2>
         <p>{email}</p>
         <p>{bio}</p>
-        <p>Ola</p>
       </div>
     </div>
   );
