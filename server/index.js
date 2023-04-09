@@ -4,6 +4,7 @@ const app = express();
 const authRoute = require("./routes/auth")
 const dotenv = require("dotenv").config()
 const cors = require("cors")
+const bodyParser = require("body-parser")
 const PORT = process.env.PORT
 
 
@@ -20,6 +21,9 @@ app.use(cors({
     origin: "*",
     credentials: true,
 }))
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 
 app.use("/api/auth", authRoute)
 

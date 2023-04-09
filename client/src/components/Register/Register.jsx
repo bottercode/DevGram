@@ -19,7 +19,6 @@ const Register = () => {
     draggable: true,
     theme: "dark",
   };
-
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -44,19 +43,19 @@ const Register = () => {
     const { password, confirmPassword, username, email } = values;
     if (password !== confirmPassword) {
       toast.error(
-        "Password and Confirm password should be same.",
+        "Password and confirm password should be same.",
         toastOptions
       );
       return false;
     } else if (username.length < 3) {
       toast.error(
-        "Username should be greater than atleast 3 letters",
+        "Username should be greater than 3 characters.",
         toastOptions
       );
       return false;
     } else if (password.length < 8) {
       toast.error(
-        "Password should be greater than atleast 8 letters",
+        "Password should be equal or greater than 8 characters.",
         toastOptions
       );
       return false;
@@ -71,17 +70,21 @@ const Register = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (handleValidation()) {
-      const { email, password, username } = values;
+      const { email, username, password } = values;
       const { data } = await axios.post(registerRoute, {
         username,
         email,
         password,
       });
+
       if (data.status === false) {
         toast.error(data.msg, toastOptions);
       }
       if (data.status === true) {
-        localStorage.setItem(localstorage_key, JSON.stringify(data.user));
+        localStorage.setItem(
+          localstorage_key, 
+          JSON.stringify(data.user)
+          );
         history.push("/");
       }
     }
