@@ -34,7 +34,11 @@ const Register = () => {
       }
     };
     checkIfUserLoggedIn();
-  }, [history]);
+  }, );
+
+  const handleChange = (event) => {
+    setValues({ ...values, [event.target.name]: event.target.value });
+  };
 
   const handleValidation = () => {
     const { password, confirmPassword, username, email } = values;
@@ -83,10 +87,7 @@ const Register = () => {
     }
   };
 
-  const handleChange = (event) => {
-    setValues({ ...values, [event.target.name]: event.target.value });
-  };
-
+  
   return (
     <div className="flex justify-center items-center h-full">
       <Form onSubmit={handleSubmit}>

@@ -32,7 +32,7 @@ const Login = () => {
       }
     };
     checkIfUserLoggedIn();
-  }, [history]);
+  }, );
 
   const handleValidation = () => {
     const { username, password } = values;
