@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
-        <h1 className={classes.logotext}>Pro-Gram</h1>
+        <h1 className={classes.logotext}>Pro-Gram.</h1>
       </div>
       <nav className={classes.nav}>
       <ul>
@@ -13,8 +13,14 @@ function Navbar() {
           <a className={classes.elements} href="friends">Friends</a>
           <a className={classes.elements} href="messages">Messages</a>
           <a className={classes.elements} href="">Logout</a>
+          <li className={classes.search}>
+            <input type="text" placeholder="Search" />
+            <button type="submit">
+            </button>
+          </li>
       </ul>
       </nav>
+      <div className={classes.profile}></div>
     </header>
   );
 }

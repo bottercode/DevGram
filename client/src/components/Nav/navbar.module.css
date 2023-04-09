@@ -4,8 +4,10 @@
 }
 
 .header{
-  background-color: #ebde34;
-  height: 45px;
+  background-color: #F3F3F4;
+  height: 120px;
+  display: flex;
+  align-items: center;
 }
 
 a{
@@ -21,18 +23,61 @@ a{
     float: right;
 }
 .elements{
-  color: black; 
-  list-style-type: none;
-  text-decoration: none;
-  font: 'Nunito Sans', 'sans-serif';
-  font-weight: 400;
-  font-size: 20px;
-  padding-right:10px ;
-  padding-left: 10px;
- 
+  font-family: 'Urbanist', sans-serif;
+  font-weight: bold;
+  color: gray;
+  display: content;
+  justify-content: center;
+  padding-left: 100px;
+  padding-top: 50px;
+  letter-spacing: 3px;
 }
+
+.search {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  font-size: 18px;
+}
+
+.search input[type="text"] {
+  padding: 16px 14px;
+  border-radius: 7px;
+  border: none;
+  margin-top: 20px;
+  margin-right: 200px;
+  outline:none;
+}
+
+.search input[type="text"]::placeholder {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 700;
+}
+
+.search input[type="text"]:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.profile {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #555;
+  position: absolute;
+  top: 7.5%;
+  right: 110px;
+  transform: translateY(-50%);
+}
+
+
 .logotext{
-  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 100;
+  font-size: 40px;
 }
 
 

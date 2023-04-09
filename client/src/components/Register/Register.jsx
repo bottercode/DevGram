@@ -4,6 +4,9 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { registerRoute } from "../../APIRoutes";
 import { useHistory, Link } from "react-router-dom";
+import Input from "../../ui/Input";
+import Button from "../../ui/Button";
+import Form from "../../ui/Form";
 
 const localstorage_key = process.env.LOCALSTORAGE_KEY;
 
@@ -85,41 +88,40 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <h1>Pro-Gram</h1>
-        </div>
-        <input
+    <div className="flex justify-center items-center h-full">
+      <Form onSubmit={handleSubmit}>
+        <Input
           type="text"
           placeholder="username"
           name="username"
           onChange={handleChange}
         />
-        <input
-          className="mt-9"
+        <Input
           type="email"
           placeholder="Email"
           name="email"
           onChange={handleChange}
         />
-        <input
+        <Input
           type="password"
           placeholder="Password"
           name="password"
           onChange={handleChange}
         />
-        <input
+        <Input
           type="password"
           placeholder="Confirm Password"
           name="confirmPassword"
           onChange={handleChange}
         />
-        <button type="submit"> Create User</button>
-        <span>
-          Already have an account? <Link to="/login">Login</Link>
+        <Button type="submit">Create User</Button>
+        <span className="text-[10px] block text-center mt-4">
+          Already have an account?{" "}
+          <Link className="font-semibold text-blue-600" to="/login">
+            Login
+          </Link>
         </span>
-      </form>
+      </Form>
       <ToastContainer />
     </div>
   );
