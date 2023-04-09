@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './profile.css'
+import React, { useState } from "react";
+import "./profile.css";
 
 const Profile = ({ name, email, bio, avatarUrl }) => {
   const [avatar, setAvatar] = useState(avatarUrl);
@@ -28,6 +28,7 @@ const Profile = ({ name, email, bio, avatarUrl }) => {
         <h2>{name}</h2>
         <p>{email}</p>
         <p>{bio}</p>
+        <p>Hello</p>
       </div>
     </div>
   );
