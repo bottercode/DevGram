@@ -18,7 +18,14 @@ function App() {
           <Route path="/" exact>
             <Navbar />
             <Home />
-          </Route>  
+          </Route> 
+          <Route path="/profile" exact>
+          <Profile
+        name="Saurabh"
+        email="abcd.com"
+        bio="I'm a software engineer based in San Francisco."
+      />
+      </Route> 
         </Switch>
       </BrowserRouter>
     </div>
