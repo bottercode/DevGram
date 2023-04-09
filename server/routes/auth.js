@@ -4,3 +4,6 @@ const login = require("../controller/userController");
 
 router.post("/register", register);
 router.post("/login", login);
+
+router.post("/register", register);
+router.post("/login", login);
