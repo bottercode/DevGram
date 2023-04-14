@@ -4,6 +4,7 @@ import Login from "./components/Login/Login";
 import Navbar from "./components/Nav/navbar";
 import Home from "./components/home/Home";
 import Profile from "./components/profile/profile";
+import Message from "./components/Message/Message";
 function App() {
   return (
     <div className="h-full">
@@ -18,6 +19,9 @@ function App() {
           <Route path="/" exact>
             <Navbar />
             <Home />
+          </Route> 
+          <Route path="/message" exact>
+            <Message />
           </Route> 
           <Route path="/profile" exact>
           <Profile
