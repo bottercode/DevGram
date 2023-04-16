@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="h-full">
-         {isLogged && <Navbar />}
+        {isLogged && window.location.pathname !== "/" && <Navbar />}
       <BrowserRouter>
         <Switch>
           {!isLogged && (
@@ -42,11 +42,11 @@ function App() {
               <Register onsetislogged={onSetisLoggedState} />
             </Route>
           )}
-          {isLogged && (
+         
             <Route path="/" exact>
               <Home />
             </Route>
-          )}
+         
           {isLogged && (
             <Route path="/profile" exact>
               <Profile
