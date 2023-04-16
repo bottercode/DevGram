@@ -25,15 +25,6 @@ const Login = () => {
     password: "",
   });
 
-  useEffect(() => {
-    const checkIfUserLoggedIn = () => {
-      if (localStorage.getItem(localstorage_key)) {
-        history.push("/");
-      }
-    };
-    checkIfUserLoggedIn();
-  }, );
-
   const handleValidation = () => {
     const { username, password } = values;
     if (username === "" || password === "") {

@@ -8,9 +8,9 @@ import Input from "../../ui/Input";
 import Button from "../../ui/Button";
 import Form from "../../ui/Form";
 
-const localstorage_key = process.env.LOCALSTORAGE_KEY;
+export const localStorage_key = "Pro-Gram";
 
-const Register = () => {
+const Register = (props) => {
   const history = useHistory();
   const toastOptions = {
     position: "bottom-right",
@@ -25,15 +25,7 @@ const Register = () => {
     password: "",
     confirmPassword: "",
   });
-
-  useEffect(() => {
-    const checkIfUserLoggedIn = () => {
-      if (localStorage.getItem(localstorage_key)) {
-        history.push("/");
-      }
-    };
-    checkIfUserLoggedIn();
-  }, );
+  const [isLoadingState, setLoadingState] = useState(false);
 
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
@@ -69,7 +61,9 @@ const Register = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     if (handleValidation()) {
+      setLoadingState(true);
       const { email, username, password } = values;
       const { data } = await axios.post(registerRoute, {
         username,
@@ -80,17 +74,15 @@ const Register = () => {
       if (data.status === false) {
         toast.error(data.msg, toastOptions);
       }
+      setLoadingState(false);
       if (data.status === true) {
-        localStorage.setItem(
-          localstorage_key, 
-          JSON.stringify(data.user)
-          );
+        localStorage.setItem(localStorage_key, JSON.stringify(data.user));
+        props.onsetislogged();
         history.push("/");
       }
     }
   };
 
-  
   return (
     <div className="flex justify-center items-center h-full">
       <Form onSubmit={handleSubmit}>
@@ -118,7 +110,9 @@ const Register = () => {
           name="confirmPassword"
           onChange={handleChange}
         />
-        <Button type="submit">Create User</Button>
+        <Button disabled={isLoadingState ? true : false} type="submit">
+          {isLoadingState ? "...Loading" : "Create User"}
+        </Button>
         <span className="text-[10px] block text-center mt-4">
           Already have an account?{" "}
           <Link className="font-semibold text-blue-600" to="/login">
