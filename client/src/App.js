@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="h-full">
-      <Navbar />
+         {isLogged && <Navbar />}
       <BrowserRouter>
         <Switch>
           {!isLogged && (
