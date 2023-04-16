@@ -32,6 +32,8 @@
     color: #404040;
   }
 
+  
+
   .h2{
     margin: 0 0 0 20px;
   }
@@ -117,4 +119,17 @@
     color: white;
     font-size: 20px;
     font-weight: bold;
+  }
+
+  .type_text{
+    width: 90%;
+    margin: 59% 0 0 45px;
+    height: 35px;
+    padding-left: 30px;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
