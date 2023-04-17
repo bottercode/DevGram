@@ -34,8 +34,7 @@ const Home = () => {
         </h2>
 
         <h2 className={classes.descText}>
-          DevGram is a web application designed for developers to connect with each other. 
-          
+          DevGram is a web application designed for developers to connect with each other.
         </h2>
       </div>
     </div>
