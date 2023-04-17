@@ -10,11 +10,12 @@ import { localStorage_key } from "./components/Register/Register";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [isLogged, setisLogged] = useState(true);
+  const [isLogged, setisLogged] = useState(false);
 
   const onSetisLoggedState = () => {
     setisLogged(true);
   };
+  
   useEffect(() => {
     const data = localStorage.getItem(localStorage_key);
     console.log(data);
@@ -39,16 +40,17 @@ function App() {
         )}
 
           {!isLogged && (
+            <Route path="/register" exact>
+              <Register onsetislogged={onSetisLoggedState} />
+            </Route>
+          )}
+
+          {!isLogged && (
             <Route path="/login" exact>
               <Login />
             </Route>
           )}
-          {!isLogged && (
-            <Route path="/Register" exact>
-              <Register onsetislogged={onSetisLoggedState} />
-            </Route>
-          )}
-         
+          
             <Route path="/" exact>
               <Home />
             </Route>
