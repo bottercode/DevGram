@@ -29,9 +29,15 @@ function App() {
 
   return (
     <div className="h-full">
-        {isLogged && window.location.pathname !== "/" && <Navbar />}
+       
       <BrowserRouter>
         <Switch>
+        {isLogged &&(
+          <Route path="/home" exact >
+              <Navbar />
+          </Route>
+        )}
+
           {!isLogged && (
             <Route path="/login" exact>
               <Login />
@@ -57,7 +63,7 @@ function App() {
             </Route>
           )}
           <Route path="*">
-            {isLogged ? <Redirect to="/" /> : <Redirect to="/login" />}
+            {isLogged ? <Redirect to="/home" /> : <Redirect to="/login" />}
           </Route>
         </Switch>
       </BrowserRouter>

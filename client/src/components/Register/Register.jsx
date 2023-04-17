@@ -78,7 +78,7 @@ const Register = (props) => {
       if (data.status === true) {
         localStorage.setItem(localStorage_key, JSON.stringify(data.user));
         props.onsetislogged();
-        history.push("/");
+        history.push("/home");
       }
     }
   };

@@ -47,7 +47,7 @@ const Login = () => {
       }
       if (data.status === true) {
         localStorage.setItem(localstorage_key, JSON.stringify(data.user));
-        history.push("/");
+        history.push("/home");
       }
     }
   };
