@@ -15,7 +15,6 @@ const Home = () => {
         </h2>
       </div>
 
-     
       <div className={classes.right}>
         <div className={classes.loginSignup}>
           <a href="/login" className={classes.loginLink}>Log in</a>

@@ -14,8 +14,9 @@ const Profile = ({ name, email, bio, avatarUrl }) => {
   };
 
   return (
-    <div className="profile">
-      <div className="avatar-container">
+  <div class="container">
+  <div class="box">
+   <div className="avatar-container">
         <img className="avatar" src={avatar} alt={`upload`} />
         <input
           type="file"
@@ -23,13 +24,14 @@ const Profile = ({ name, email, bio, avatarUrl }) => {
           onChange={handleUpload}
           className="upload-button"
         />
-      </div>
-      <div className="info">
+    </div>
+    <div className="info">
         <h2>{name}</h2>
         <p>{email}</p>
         <p>{bio}</p>
-      </div>
     </div>
+  </div>
+ </div>
   );
 };
 
