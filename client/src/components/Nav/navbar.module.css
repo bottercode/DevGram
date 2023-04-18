@@ -3,6 +3,22 @@
   padding: 0;
 }
 
+.brandName {
+  position: fixed;
+  width: 120px;
+  height: 12px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.devText {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.gramText {
+  color: #999999;
+}
+
 .header{
   background-color: #F3F3F4;
   height: 120px;

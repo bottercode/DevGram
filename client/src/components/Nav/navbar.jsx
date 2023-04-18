@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
-        <h1 className={classes.logotext}>Pro-Gram.</h1>
+        <h1 className={classes.logotext}>DevGram</h1>
       </div>
       <nav className={classes.nav}>
       <ul>
