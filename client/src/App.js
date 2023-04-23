@@ -15,7 +15,7 @@ function App() {
   const onSetisLoggedState = () => {
     setisLogged(true);
   };
-  
+
   useEffect(() => {
     const data = localStorage.getItem(localStorage_key);
     console.log(data);
@@ -29,50 +29,44 @@ function App() {
   }, []);
 
   return (
-    <div className="h-full">
-       
-      <BrowserRouter>
-        <Switch>
-        <Route path ="/message" exact>
-          <Message />
-        </Route>
-        {isLogged &&(
-          <Route path="/home" exact >
-              <Navbar />
+    <BrowserRouter>
+      <Switch>
+        {isLogged && (
+          <Route path="/" exact>
+            <Navbar />
           </Route>
         )}
 
-          {!isLogged && (
-            <Route path="/register" exact>
-              <Register onsetislogged={onSetisLoggedState} />
-            </Route>
-          )}
-
-          {!isLogged && (
-            <Route path="/login" exact>
-              <Login />
-            </Route>
-          )}
-          
-            <Route path="/" exact>
-              <Home />
-            </Route>
-         
-          {isLogged && (
-            <Route path="/profile" exact>
-              <Profile
-                name="Saurabh"
-                email="abcd.com"
-                bio="I'm a software engineer based in San Francisco."
-              />
-            </Route>
-          )}
-          <Route path="*">
-            {isLogged ? <Redirect to="/home" /> : <Redirect to="/login" />}
+        {!isLogged && (
+          <Route path="/register" exact>
+            <Register onsetislogged={onSetisLoggedState} />
           </Route>
-        </Switch>
-      </BrowserRouter>
-    </div>
+        )}
+
+        {!isLogged && (
+          <Route path="/login" exact>
+            <Login />
+          </Route>
+        )}
+
+        <Route path="/home" exact>
+          <Home />
+        </Route>
+
+        {isLogged && (
+          <Route path="/profile" exact>
+            <Profile
+              name="Saurabh"
+              email="abcd.com"
+              bio="I'm a software engineer based in San Francisco."
+            />
+          </Route>
+        )}
+        <Route path="*">
+          {isLogged ? <Redirect to="/home" /> : <Redirect to="/login" />}
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
