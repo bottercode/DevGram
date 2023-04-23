@@ -50,6 +50,7 @@ function App() {
         )}
 
         <Route path="/home" exact>
+          <Navbar />
           <Home />
         </Route>
 
