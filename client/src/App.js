@@ -33,6 +33,9 @@ function App() {
        
       <BrowserRouter>
         <Switch>
+        <Route path ="/message" exact>
+          <Message />
+        </Route>
         {isLogged &&(
           <Route path="/home" exact >
               <Navbar />
