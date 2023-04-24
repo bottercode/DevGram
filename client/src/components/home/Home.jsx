@@ -1,9 +1,12 @@
+import UserPost from "./UserPost";
 import styles from "./home.module.css";
 
 const Home = () => {
   return (
     <main className={styles.home_outerdiv}>
-      <section>main data</section>
+      <section>
+        <UserPost />
+      </section>
       <aside>
         <div>
           <h1>Notification</h1>
