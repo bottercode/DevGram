@@ -15,7 +15,7 @@ function App() {
   const onSetisLoggedState = () => {
     setisLogged(true);
   };
-  
+
   useEffect(() => {
     const data = localStorage.getItem(localStorage_key);
     console.log(data);
@@ -30,13 +30,8 @@ function App() {
 
   return (
     <div className="h-full">
-      <Profile
-                name="Saurabh Gupta"
-                email="abcd@gmail.com"
-                bio="I'm a software engineer.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna"
-                loc="Bhubaneswar, India"
-              />
-      {/* <BrowserRouter>
+       
+      <BrowserRouter>
         <Switch>
         {isLogged &&(
           <Route path="/home" exact >
@@ -44,11 +39,11 @@ function App() {
           </Route>
         )}
 
-          {!isLogged && (
-            <Route path="/register" exact>
-              <Register onsetislogged={onSetisLoggedState} />
-            </Route>
-          )}
+        {!isLogged && (
+          <Route path="/register" exact>
+            <Register onsetislogged={onSetisLoggedState} />
+          </Route>
+        )}
 
           {!isLogged && (
             <Route path="/login" exact>
@@ -73,7 +68,7 @@ function App() {
             {isLogged ? <Redirect to="/home" /> : <Redirect to="/login" />}
           </Route>
         </Switch>
-      </BrowserRouter> */}
+      </BrowserRouter>
     </div>
   );
 }
