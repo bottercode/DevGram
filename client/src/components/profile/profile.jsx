@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './profile.css'
+import './Profile.css'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';

@@ -3,7 +3,7 @@ import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import Navbar from "./components/Nav/navbar";
 import Home from "./components/home/Home";
-import Profile from "./components/profile/profile";
+import Profile from "./components/Profile/Profile";
 import Message from "./components/Message/Message";
 
 import { localStorage_key } from "./components/Register/Register";
