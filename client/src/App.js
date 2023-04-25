@@ -30,8 +30,13 @@ function App() {
 
   return (
     <div className="h-full">
-       
-      <BrowserRouter>
+      <Profile
+                name="Saurabh Gupta"
+                email="abcd@gmail.com"
+                bio="I'm a software engineer.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna"
+                loc="Bhubaneswar, India"
+              />
+      {/* <BrowserRouter>
         <Switch>
         {isLogged &&(
           <Route path="/home" exact >
@@ -68,7 +73,7 @@ function App() {
             {isLogged ? <Redirect to="/home" /> : <Redirect to="/login" />}
           </Route>
         </Switch>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </div>
   );
 }
