@@ -25,6 +25,24 @@ app.use(cors({
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+const socketIO = require("socket.io")(http, {
+    cors: {
+        origin: "http://localhost:3000"
+    }
+})
+
+socketIO.on('connection', (socket) => {
+    console.log(`${socket.id} user connected!`);
+
+    socket.on('message', (data) => {
+        socketIO.emit('messageResponse', data);
+      });
+    
+    socket.on('disconnect', () => {
+        console.log(`A user disconnected!`)
+    })
+})
+
 
 app.use("/api/auth", authRoute)
 

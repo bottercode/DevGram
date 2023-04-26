@@ -3,11 +3,13 @@ import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import Navbar from "./components/Nav/navbar";
 import Home from "./components/home/Home";
-import Profile from "./components/profile/profile";
-import Message from "./components/Message/Message";
-
+import Profile from "./components/profile/Profile";
+import Message from "./components/message/Chat";
+import socketIO from "socket.io-client";
 import { localStorage_key } from "./components/Register/Register";
 import { useEffect, useState } from "react";
+
+const socket = socketIO.connect("http://localhost:5000")
 
 function App() {
   const [isLogged, setisLogged] = useState(false);
@@ -31,8 +33,8 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/message" exact>
-          <Message />
+        <Route path="/chat" exact>
+          <Message socket={socket} />
         </Route>
         
         {isLogged && (
@@ -66,6 +68,7 @@ function App() {
             />
           </Route>
         )}
+
         <Route path="*">
           {isLogged ? <Redirect to="/home" /> : <Redirect to="/login" />}
         </Route>
