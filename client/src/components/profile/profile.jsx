@@ -13,6 +13,7 @@ const Profile = ({ name, email, bio, avatarUrl }) => {
     };
   };
 
+  
   return (
     <div className="profile">
       <div className="avatar-container">
