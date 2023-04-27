@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-import './Profile.css'
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import './profile.css'
 
-const Profile = ({ name, email, bio, avatarUrl,loc }) => {
+const Profile = ({ name, email, bio, avatarUrl }) => {
   const [avatar, setAvatar] = useState(avatarUrl);
 
   const handleUpload = (event) => {
@@ -16,64 +13,24 @@ const Profile = ({ name, email, bio, avatarUrl,loc }) => {
     };
   };
 
+  
   return (
-  <div class="container">
-  <div class="box">
-    <div className='box-1'>
-   <div className="avatar-container">
-        <img className="avatar" src={avatar} alt={`p  UPLOAD`} />
+    <div className="profile">
+      <div className="avatar-container">
+        <img className="avatar" src={avatar} alt={`upload`} />
         <input
           type="file"
           accept="image/*"
           onChange={handleUpload}
           className="upload-button"
         />
-    </div>
-    <div className="info">
+      </div>
+      <div className="info">
         <h2>{name}</h2>
         <p>{email}</p>
         <p>{bio}</p>
-        <div className='loc'>
-        <LocationOnIcon fontSize='large' padding-left="0px"  className='loc-icon'/>
-        <p className='loc-name'>{loc}</p>
-        </div>
-    </div>
-    </div>
-  <div className='box-2'>
-  <div className='skills'>
-      <div class="left">
-      <button> Follow+</button>  
       </div>
-      <div class="right">
-      <p>C++</p>
-      <p>React JS</p>
-      <p>Node Js</p>
-      <p>Express Js</p>
-      <p>MongoDB</p>
-      </div>
-      
-  </div>
-
-  </div>
-  <div className='box-3'>
-  <div className='social'>
-      <InstagramIcon color="secondary" fontSize='large' padding-left="0px"  className='icons'/>
-      <LinkedInIcon color="primary" fontSize='large' padding-left="0px"  className='icons'/>
-  </div>
-  </div>
-  <div className='box-4'>
-    <button className='btn-edit'>Edit Profile</button>
     </div>
-  </div>
-  <div className='another-box'>
-    <div className='another-box-1'>
-    <p>Projects</p>
-    </div>
-    <div className='another-box-2'>
-      
-    </div>
-  </div>
-  </div>
   );
 };
 
