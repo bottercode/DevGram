@@ -1,7 +1,8 @@
 .post_outer {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 8px;
   background-color: white;
+  border: 1px solid #f0f0f0;
 }
 .post_header {
   border-bottom: 1px solid black;
@@ -37,9 +38,20 @@
   /* font-size: small; */
   margin-bottom: 0.15rem;
 }
-.post_main div {
+.border {
   border-bottom: 1px solid #717171;
 }
+.post_main a {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #717171;
+  text-decoration: underline;
+}
 .post_inner {
-  max-height: 200px;
+  font-size: small;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

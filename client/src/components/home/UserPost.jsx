@@ -1,24 +1,8 @@
 import styles from "./userpost.module.css";
 import { Link } from "react-router-dom";
-// import ReactMarkdown from "react-markdown";
-// import remarkGfm from "remark-gfm";
-// import markdown from "./test.md";
-// import { useEffect, useState } from "react";
+import { markdown } from "./test";
 
 const UserPost = () => {
-  const [mrk, setmrk] = useState("");
-  // useEffect(() => {
-  //   fetch(markdown)
-  //     .then((res) => {
-  //       const data = res.text();
-  //       return data;
-  //     })
-  //     .then((data) => {
-  //       console.log(data);
-  //       setmrk(data);
-  //     });
-  // }, [markdown]);
-
   return (
     <div className={styles.post_outer}>
       <div className={styles.post_header}>
@@ -29,14 +13,10 @@ const UserPost = () => {
         </div>
       </div>
       <div className={styles.post_main}>
-        <h1>
-          Boost your Web3 Development Process with These Top Tools and Platforms
-          and Seeking Project Partner for Exciting New Venture!
-        </h1>
-        <div />
-        <div className={styles.post_inner}>
-          {/* <ReactMarkdown children={mrk} remarkPlugins={[remarkGfm]} /> */}
-        </div>
+        <h1>Seeking Project Partner for Exciting New Venture!</h1>
+        <div className={styles.border} />
+        <div className={styles.post_inner}>{markdown}</div>
+        <Link to="/home">read more...</Link>
       </div>
     </div>
   );

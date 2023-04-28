@@ -6,6 +6,12 @@ const Home = () => {
     <main className={styles.home_outerdiv}>
       <section>
         <UserPost />
+        <UserPost />
+        <UserPost />
+        <UserPost />
+        <UserPost />
+        <UserPost />
+        <UserPost />
       </section>
       <aside>
         <div>
