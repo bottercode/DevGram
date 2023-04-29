@@ -59,10 +59,10 @@ function App() {
         </Route>
 
        
-
+{/* 
         <Route path="*">
           {isLogged ? <Redirect to="/home" /> : <Redirect to="/login" />}
-        </Route>
+        </Route> */}
       </Switch>
     </BrowserRouter>
   );

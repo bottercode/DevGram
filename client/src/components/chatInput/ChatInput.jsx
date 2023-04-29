@@ -12,15 +12,17 @@ const ChatInput = ({ handleSendMsg }) => {
     setShowEmojiPicker(!showEmojiPicker);
   };
 
-  const handleEmojiClick = (event, emojiObject) => {
+  const handleEmojiClick = (event, emoji) => {
+    console.log(emoji)
     let message = msg;
-    message += emojiObject.emoji;
+    message += emoji.emoji;
     setMsg(message);
   };
 
   const sendChat = (event) => {
     event.preventDefault();
-    if (msg.length > 0) {
+    if (msg.trim().length > 0) {
+      console.log('Chat entered:', msg);
       handleSendMsg(msg);
       setMsg("");
     }
