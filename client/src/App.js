@@ -64,14 +64,16 @@ function App() {
             <Profile
               name="Saurabh"
               email="abcd.com"
-              bio="I'm a software engineer based in San Francisco."
+              bio="Full-stack developer with 1+ years of experience"
+              location="INDIA"
+              skills={["Javascript","Python","React","Node","MongoDB"]}
             />
           </Route>
         )}
-
+{/* 
         <Route path="*">
           {isLogged ? <Redirect to="/home" /> : <Redirect to="/login" />}
-        </Route>
+        </Route>  */}
       </Switch>
     </BrowserRouter>
   );
