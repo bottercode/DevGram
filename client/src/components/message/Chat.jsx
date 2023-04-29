@@ -16,7 +16,7 @@ const Chat = () => {
   const socket = useRef();
   const [contacts, setContacts] = useState([])
   const [currentChat, setCurrentChat] = useState(undefined)
-  const [username, setUsername] = useState(undefined)
+  const [currentuser, setcurrentuser] = useState(undefined)
 
   useEffect(() => {
     const func = async() => {
@@ -25,25 +25,18 @@ const Chat = () => {
       }
       else {
         const data =  await JSON.parse(localStorage.getItem("Pro-Gram")).username
-        setUsername(data)
+        setcurrentuser(data)
       }
     }
     func();
   }, [history])
 
   useEffect(() => {
-    if (username) {
+    if (currentuser) {
       socket.current = io(host);
-      socket.current.emit("add-user", username._id);
+      socket.current.emit("add-user", currentuser._id);
     }
-  }, [username]);
-
-  useEffect(() => {
-    const userdata = JSON.parse(
-      localStorage.getItem("Pro-Gram")
-    );
-    setUsername(userdata.username);
-  },[])
+  }, [currentuser]);
 
   
   const handleChatChange = (chat) =>{
@@ -54,10 +47,11 @@ const Chat = () => {
     <div className={classes.chat}>
       <div className={classes.ChatContainer}>
         <Contacts contacts={contacts} changeChat={handleChatChange}/>
-        {username === undefined ? (
+        {currentuser === undefined ? (
           <Welcome />
         ):(
-          <ChatContainer username={username} currentChat={currentChat} socket={socket} />
+          <ChatContainer username={currentuser} currentChat={currentChat} socket={socket.current} />
+
         )}
       </div>
     </div>

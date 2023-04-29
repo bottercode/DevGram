@@ -27,8 +27,8 @@ const Contacts = ({ contacts, changeChat }) => {
               return (
                 <div
                   key={contact._id}
-                  className={`contact ${
-                    index === currentSelected ? "selected" : ""
+                  className={`${classes.contact} ${
+                    index === currentSelected ? classes.selected : ""
                   }`}
                   onClick={() => changeCurrentChat(index, contact)}
                 >
