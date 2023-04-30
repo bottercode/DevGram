@@ -53,9 +53,14 @@ function App() {
             <Login />
           </Route>
         )}
-        {!isLogged && (
+
+        {isLogged && (
           <Route path="/profile" exact>
-            <Profile skills={skills} name="Saurabh" location="India" bio="I am a full stack developer"/>
+            <Profile 
+             skills={skills}
+             name="Saurabh" 
+             location="India" 
+             bio="I am a full stack developer"/>
           </Route>
         )}
 
