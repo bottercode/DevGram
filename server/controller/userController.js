@@ -43,3 +43,26 @@ module.exports.login = async(req,res,next) => {
         next(err)
     }
 } 
+
+module.exports.getAllUsers = async(req,res,next) => {
+    try{
+        const users = await User.find({_id: {$ne: req.params}}).select([
+            "email",
+            "username",
+            "_id"
+        ])
+        return res.json(users) 
+    }catch(err){
+        next(err)
+    }
+}
+
+module.exports.logOut = (req, res, next) => {
+    try {
+      if (!req.params.id) return res.json({ msg: "User id is required " });
+      onlineUsers.delete(req.params.id);
+      return res.status(200).send();
+    } catch (ex) {
+      next(ex);
+    }
+  };

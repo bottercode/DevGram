@@ -1,0 +1,57 @@
+.ContactsContainer{
+    display: grid;
+  grid-template-rows: 10% 75% 15%;
+  overflow: hidden;
+  background-color: teal;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    gap: 0.8rem;
+  }
+  
+  .contacts::-webkit-scrollbar {
+    width: 0.2rem;
+  }
+  
+  .contacts::-webkit-scrollbar-thumb {
+    background-color: #ffffff39;
+    width: 0.1rem;
+    border-radius: 1rem;
+  }
+  
+  .contact {
+    background-color: #ffffff34;
+    min-height: 5rem;
+    cursor: pointer;
+    width: 90%;
+    border-radius: 0.2rem;
+    padding: 0.4rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+  }
+
+  .contact .username h3 {
+    color: white;
+  }
+  
+  .contact.selected {
+    background-color: #9a86f3;
+  }
+  
+  .username {
+    background-color: #0d0d30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .username h2 {
+    color: green;
+  }
