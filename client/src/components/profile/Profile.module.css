@@ -1,0 +1,176 @@
+.profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 50px auto;
+  max-width: 1200px;
+}
+
+.leftSection {
+  flex-basis: 30%;
+  padding-right: 30px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.profilePic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.profilePic img {
+   width: 100%;
+  height: 100%; 
+  object-fit: cover; 
+  border-radius: 50%;
+  border: 2px solid #0d8ecf;
+}
+
+.username {
+  font-size: 24px;
+  margin: 0;
+}
+
+.location {
+  font-size: 18px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.bio {
+  font-size: 18px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.techskills {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.techskills p {
+  font-size: 16px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: #e1e1e1;
+}
+
+.socialHandles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.socialHandles a {
+  display: inline-block;
+  margin-right: 10px;
+  text-align: center;
+  line-height: 40px;
+  padding: 0px 10px;
+  color: #333;
+}
+
+.socialHandles a i {
+  
+  font-size: 50px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.followBtn {
+  font-size: 16px;
+  color: #fff;
+  background-color: #1da1f2;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.followBtn:hover {
+  background-color: #0d8ecf;
+}
+
+.editProfileBtn {
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.editProfileBtn:hover {
+  background-color: #f1f1f1;
+}
+
+.middleSection {
+  flex-basis: 40%;
+}
+
+.middleSection h3 {
+  font-size: 24px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+}
+
+.project {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #e1e1e1;
+  border-radius: 10px;
+}
+
+.project h4 {
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.project p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.rightSection {
+  flex-basis: 25%;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.recentActivity {
+  margin-bottom: 20px;
+}
+
+.recentActivity h3 {
+  font-size: 24px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.activity {
+  display: flex;
+  margin-bottom: 10px;
+}
