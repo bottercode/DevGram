@@ -1,106 +1,33 @@
-*{
-  margin: 0;
-  padding: 0;
-}
-
-.brandName {
-  position: fixed;
-  width: 120px;
-  height: 12px;
-  font-size: 35px;
-  font-weight: bold;
-}
-
 .devText {
   color: rgba(0, 0, 0, 0.9);
 }
 
-.gramText {
-  color: #999999;
+.header {
+  padding: 1rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #f0f0f0;
 }
-
-.header{
-  background-color: #F3F3F4;
-  height: 120px;
+.logo {
   display: flex;
   align-items: center;
 }
-
-a{
-  font-size: larger;
-}
-.logo{
-  text-decoration: none;
-    padding-left: 15px;
-    font-size: 13px;
-    float: left;
-}
-.nav{
-    float: right;
-}
-.elements{
-  font-family: 'Urbanist', sans-serif;
-  font-weight: bold;
-  color: gray;
-  display: content;
-  justify-content: center;
-  padding-left: 100px;
-  padding-top: 50px;
-  letter-spacing: 3px;
-}
-
-.search {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  font-size: 18px;
-}
-
-.search input[type="text"] {
-  padding: 16px 14px;
-  border-radius: 7px;
-  border: none;
-  margin-top: 20px;
-  margin-right: 200px;
-  outline:none;
-}
-
-.search input[type="text"]::placeholder {
-  font-family: 'Urbanist', sans-serif;
-  font-weight: 700;
-}
-
-.search input[type="text"]:hover {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+.nav {
+  margin-left: 2rem;
+  width: 10px;
+  height: 10px;
 }
 
 .profile {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: #555;
-  position: absolute;
-  top: 7.5%;
-  right: 110px;
-  transform: translateY(-50%);
 }
 
-
-.logotext{
-  padding-left: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  font-family: 'Montserrat Alternates', sans-serif;
-  font-weight: 100;
-  font-size: 40px;
+.logotext {
+  font-weight: 700;
+  font-size: 25px;
+  cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
