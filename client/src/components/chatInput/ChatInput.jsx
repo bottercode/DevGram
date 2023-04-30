@@ -12,12 +12,16 @@ const ChatInput = ({ handleSendMsg }) => {
     setShowEmojiPicker(!showEmojiPicker);
   };
 
-  const handleEmojiClick = (event, emoji) => {
-    console.log(emoji)
-    let message = msg;
-    message += emoji.emoji;
+  const handleEmojiClick = (event, emojiObj) => {
+    const { emoji } = emojiObj;
+    console.log(emoji);
+  
+    const encodedEmoji = encodeURIComponent(emoji);
+  
+    const message = msg + encodedEmoji;
     setMsg(message);
   };
+  
 
   const sendChat = (event) => {
     event.preventDefault();

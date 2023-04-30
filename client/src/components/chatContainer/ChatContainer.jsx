@@ -12,7 +12,7 @@ const ChatContainer = ({ username, currentChat, socket }) => {
   const [arrivalMessage, setArrivalMessage] = useState(null);
 
   useEffect(() => {
-    const fetchMessages  = async () => {
+    const fetchMessages = async () => {
       const data = await JSON.parse(localStorage.getItem('Pro-Gram'));
       if (data && currentChat) {
         const response = await axios.post(recieveMessageRoute, {
@@ -22,7 +22,7 @@ const ChatContainer = ({ username, currentChat, socket }) => {
         setMessages(response.data);
       }
     };
-    fetchMessages ();
+    fetchMessages();
   }, [currentChat]);
 
   
@@ -47,8 +47,8 @@ const ChatContainer = ({ username, currentChat, socket }) => {
   };
 
   useEffect(() => {
-    if (socket.current) {
-      socket.current.on('msg-recieve', (msg) => {
+    if (socket) {
+      socket.on('msg-recieve', (msg) => {
         setArrivalMessage({ fromSelf: false, message: msg });
       });
     }
