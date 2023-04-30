@@ -11,6 +11,8 @@ import Form from "../../ui/Form";
 export const localStorage_key = "Pro-Gram";
 
 const Register = (props) => {
+
+ 
   const history = useHistory();
   const toastOptions = {
     position: "bottom-right",

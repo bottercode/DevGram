@@ -7,7 +7,7 @@ import socketIO from "socket.io-client";
 import { localStorage_key } from "./components/Register/Register";
 import { useEffect, useState } from "react";
 import Chat from "./components/message/Chat";
-
+import Profile from "./components/profile/Profile"; 
 const socket = socketIO.connect("http://localhost:5000")
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
       setisLogged(false);
     }
   }, []);
-
+  const skills=["javascript","NodeJs","MongoDB"]
   return (
     <BrowserRouter>
       <Switch>
@@ -51,6 +51,11 @@ function App() {
         {!isLogged && (
           <Route path="/login" exact>
             <Login />
+          </Route>
+        )}
+        {!isLogged && (
+          <Route path="/profile" exact>
+            <Profile skills={skills} name="Saurabh" location="India" bio="I am a full stack developer"/>
           </Route>
         )}
 
